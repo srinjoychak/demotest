@@ -13,7 +13,7 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: srinjchaweblb1
+    app: srinjchawebapp
   type: NodePort
 status:
   loadBalancer: {}
