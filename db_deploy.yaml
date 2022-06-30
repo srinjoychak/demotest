@@ -37,7 +37,7 @@ spec:
             secretKeyRef:
               name: srinjchadb-sec
               key: db_pass
-        - name: MySQL_ROOT_PASSWORD
+        - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
               name: srinjchadb-sec
