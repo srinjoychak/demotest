@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: srinjchawebapp
+  name: srinjchawebapp
+  namespace: srinjcha-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: srinjchawebapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: srinjchawebapp
+    spec:
+      containers:
+      - image: wordpress
+        name: wordpress
+        ports:
+        - containerPort: 80
+        envFrom:
+        - configMapRef:
+           name: srinjchaweb-config
+        env:
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: srinjchadb-sec
+              key: db_pass
+        resources: {}
+status: {}
