@@ -19,7 +19,7 @@ spec:
         app: srinjcha-cisco-app
     spec:
       containers:
-      - image: dockerashu/ashuwebapp:ciscov1
+      - image: srinjcha/srinjcha:ciscoappv3
         name: srinjchawebapp
         ports:
         - containerPort: 80
